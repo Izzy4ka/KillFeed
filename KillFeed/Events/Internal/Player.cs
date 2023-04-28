@@ -10,17 +10,8 @@ namespace KillFeed.Events.Internal
     {
 
         public void OnPlayerDying(DyingEventArgs args)
-        {   
-            if (args.Attacker is null)
-            {
-                if (args.Player.CurrentRoom.TeslaGate is null) return;
-
-                var target = PlayerAPI.List.Where(player => player.Role.Type == RoleTypeId.Scp079);
-
-                if(target is null) return;
-
-                Plugin.SenderFeed.AddHint($"Игрок {args.Player.GetInfo()} был убит Игроком {target.FirstOrDefault().GetInfo()}");
-            }
+        {
+            if (args.Attacker is null) return;
 
             Plugin.SenderFeed.AddHint($"Игрок {args.Player.GetInfo()} Был убит Игроком {args.Attacker.GetInfo()}");
         }
