@@ -1,8 +1,5 @@
-﻿using PlayerAPI = Exiled.API.Features.Player;
-using Exiled.Events.EventArgs.Player;
+﻿using Exiled.Events.EventArgs.Player;
 using KillFeed.Extensions;
-using System.Linq;
-using PlayerRoles;
 
 namespace KillFeed.Events.Internal
 {
